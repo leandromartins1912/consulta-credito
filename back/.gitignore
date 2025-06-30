@@ -1,0 +1,43 @@
+# === BACKEND JAVA / SPRING BOOT ===
+target/
+*.class
+*.log
+*.jar
+*.war
+*.iml
+*.hprof
+
+# Maven / Gradle
+.idea/
+.gradle/
+build/
+out/
+!src/main/resources/db/migration/**
+
+# Configs locais e sensíveis
+.env
+*.env
+application-*.properties
+application-*.yml
+application-*.yaml
+
+# === FRONTEND ANGULAR ===
+node_modules/
+dist/
+.angular/
+.env*
+
+# === GERAL ===
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# VS Code / IDEs
+.vscode/
+*.iws
+*.ipr
+*.iml
+.project
+.classpath
+.settings/

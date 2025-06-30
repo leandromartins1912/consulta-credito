@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Consulta de Créditos</h2>
+  <input [(ngModel)]="termoBusca" placeholder="Informe NFS-e ou Número do Crédito" />
+  <button (click)="buscar()" [disabled]="termoBusca.length < 6">Buscar</button>
+
+  <div *ngIf="buscando">Buscando...</div>
+
+  <!-- Tabela de lista de créditos -->
+  <table *ngIf="creditos.length">
+    <tr>
+      <th>Número Crédito</th>
+      <th>NFS-e</th>
+      <th>Data</th>
+      <th>Valor</th>
+    </tr>
+    <tr *ngFor="let c of creditos">
+      <td>{{ c.numeroCredito }}</td>
+      <td>{{ c.numeroNfse }}</td>
+      <td>{{ c.dataConstituicao | date:'dd-MM-yyyy' }}</td>
+      <td>{{ c.valorIssqn | currency:'BRL' }}</td>
+    </tr>
+  </table>
+
+  <!-- Tabela de crédito único -->
+  <table *ngIf="creditoUnico">
+    <tr>
+      <th>Número Crédito</th>
+      <th>NFS-e</th>
+      <th>Data</th>
+      <th>Valor</th>
+    </tr>
+    <tr>
+      <td>{{ creditoUnico.numeroCredito }}</td>
+      <td>{{ creditoUnico.numeroNfse }}</td>
+      <td>{{ creditoUnico.dataConstituicao | date:'dd-MM-yyyy' }}</td>
+      <td>{{ creditoUnico.valorIssqn | currency:'BRL' }}</td>
+    </tr>
+  </table>
+
+  <!-- Mensagem de "nenhum crédito encontrado" -->
+  <div *ngIf="buscaFinalizada && !creditos.length && !creditoUnico">
+    Nenhum crédito encontrado.
+  </div>
+</div>
