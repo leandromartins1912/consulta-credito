@@ -17,7 +17,7 @@ Sistema composto por frontend Angular, backend Spring Boot, banco de dados Postg
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/consulta-credito.git
+git clone https://github.com/leandromartins1912/consulta-credito.git
 cd consulta-credito
 ```
 
